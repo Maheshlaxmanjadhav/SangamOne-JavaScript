@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+  <!--  <style>
+        input{
+            width: 50%;
+            font-size: larger;
+            padding: 25px;
+            outline: none;
+            border: none;
+            background-color: rgb(0, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+        button{
+            width: 20%;
+            outline: none;
+            border: none;
+            background-color: rgba(182, 0, 24, 0.795);
+            color: rgb(0, 0, 0);
+            font-size: larger;
+            padding: 25px;
+        }
+        div{
+            margin-left: 20%;
+            margin-top: 20%;
+        }
+    </style>-->
+</head>
+<body>
+    <div>
+        <input type="number" id="num" placeholder="Enter The Number....">
+        <button onclick="fun()">Check!</button>
+    </div>
+    <script>
+        function fun(){
+            var num=document.getElementById("num").value;
+           // alert(num);
+           j=2;
+           if(num==""){
+               alert("enter number");
+           }else{
+           document.write("prime factors of "+num+" : ");
+           for(i=0;i<=100;i++){
+            if(num%j==0){
+                num=num/j;
+                document.write(j+"\t");
+            }else if(num%j==1){
+                j++;
+            }else if(num%j==2){
+                j++;
+            }
+           }
+        }
+        }
+    </script>
+</body>
+</html>
