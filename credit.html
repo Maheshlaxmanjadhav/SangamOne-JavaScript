@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Credit card valid</h1>
+    <input type="text" id="text1" onkeypress="return /[^a-z]/i.test(event.key)">
+    <button onclick="keyPress()">clickMe</button>
+
+    <script>
+        function keyPress() {
+            let x = [];
+            let tot = [];
+            let j = 0;
+            var myInt = document.getElementById("text1").value;
+            myInt = myInt.replace(/ /g, '');
+
+            var intArr = Array.from(myInt);
+
+            for (i = 0; i < intArr.length; i++) {
+                x[i] = intArr[i];
+            }
+            for (i = 0; i < x.length; i++) {
+                let y = x[i] * 2;
+                if (y > 9) {
+                    y = y - 9;
+                    x[i] = y;
+                } else {
+                    x[i] = y;
+                }
+                i++;
+            }
+            console.log("array[intArr] : " + intArr);
+            console.log("array[x] : " + x);
+            /* let m=0;
+             for (i = 1; i < intArr.length; i++){
+                 const deletedArray = intArr.splice(i, 0, x[m]);
+             }*/
+             var total=0;
+             for(i=0;i<x.length;i++){
+                let m=parseInt(x[i]);
+                total=total+m;
+             }
+             console.log(total);
+             if(total%10==0){
+                console.log("valid credit card number");
+             }else{
+                console.log("invalid credit card number");
+             }
+        }
+
+    </script>
+</body>
+
+</html>
